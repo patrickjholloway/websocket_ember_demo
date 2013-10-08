@@ -1,0 +1,1 @@
+App.CoffeescriptController = Ember.ObjectController.extend {}

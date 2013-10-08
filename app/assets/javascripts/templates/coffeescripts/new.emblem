@@ -1,0 +1,20 @@
+.panel
+  .row
+    .columns.large-8
+      h1 New Transmografier
+    .columns.large-4
+      img src="http://images2.wikia.nocookie.net/__cb20070709025203/candh/images/5/5a/Transmogrifier_zap.png"
+  .row
+    .columns.large-4
+      label for=view.transmogrifierNameLabel.elementId Name
+      Ember.TextField viewName=transmogrifierNameLabel
+    .columns.large-4
+      button.button.small role="button" disabledBinding=isValidJs click="runJs this" Run
+    .columns.large-4
+  .row.transmogrifiers
+    .columns.large-6
+      label for=view.transmogrifierNameLabel.elementId Raw
+      Ember.TextArea viewName=transmogrifierNameLabel valueBinding=rawContent
+    .columns.large-6
+      label for=view.transmogrifierNameLabel.elementId Transmogrified
+      Ember.TextArea viewName=transmogrifierNameLabel valueBinding=processedContent
