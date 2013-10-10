@@ -38,6 +38,7 @@ App.TransmogrificationEditController = Ember.ObjectController.extend
       when 'Ember Handlebars'
         try
           template = Em.Handlebars.compile source
+          data = {buffer:[]}
           data.view = {registerObserver:Em.K,appendChild:Em.K}
           output = template(context,{data:data})
           data.buffer.join('')
