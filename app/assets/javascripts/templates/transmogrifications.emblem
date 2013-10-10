@@ -2,6 +2,6 @@
   .row
     .columns.large-6
       shout "Patricks Very Own Transmogifier"
-    .columns.large-4: img src="http://images2.wikia.nocookie.net/__cb20070709025203/candh/images/5/5a/Transmogrifier_zap.png"
+    .columns.large-4: img src="assets/trs.png"
 .trans-content
   outlet
