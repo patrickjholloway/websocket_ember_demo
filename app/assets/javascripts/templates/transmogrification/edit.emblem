@@ -6,5 +6,5 @@
   .columns.large-12.transmogrified
     label Compiled
     Em.TextArea valueBinding=processedContent
-    if isTypeCoffee
-      button.button role="button" disabled=isNotValid | Run
+    div
+      ==processedContent

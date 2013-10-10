@@ -9,7 +9,17 @@ App.TransmogrificationEditController = Ember.ObjectController.extend
   .property('content.sourceType')
   
   processedContent: Ember.computed ->
-    
+    source = @get('content.source')
+    try
+      context = {foo:"bar"}
+      template = Emblem.compile Em.Handlebars, source
+      data = {buffer:[]}
+      output = template(context,{data:data})
+      data.buffer.join('')
+    catch e
+      debugger
+      console.log e
+      e
     # template = Emblem.compile Handlebars, @get('rawContent')
     # template(this)
     # 
@@ -21,13 +31,13 @@ App.TransmogrificationEditController = Ember.ObjectController.extend
       # template = Emblem.compile Handlebars, @get('rawContent')
       # data = {stuff: true}
       # template(data)
-    try
-      compiled = CoffeeScript.compile @get('content.source')
-      @set 'isNotValid', false
-      compiled
-    catch error
-      @set 'isNotValid', true
-      error
+    # try
+    #   compiled = CoffeeScript.compile @get('content.source')
+    #   @set 'isNotValid', false
+    #   compiled
+    # catch error
+    #   @set 'isNotValid', true
+    #   error
   .property('content.source')
   
   actions:
