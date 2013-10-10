@@ -20,8 +20,31 @@
 
 @import "foundation";
 
-.transmogrifiers {
+.transmogrifier {
   textarea {
-    min-height:700px;
-  }  
+    min-height:150px;
+  }
+}
+
+.trans-content {
+  min-height:800px;
+  background-color:#fff;
+}
+
+.transmogrified {
+  textarea {
+    min-height:350px;
+  }
+}
+
+.spaced-vertical-20 {
+  margin-top:20px !important;
+}
+
+.spaced-vertical-50 {
+  margin-top:50px !important;
+}
+
+.spaced-vertical-10 {
+  margin-top:10px !important;
 }

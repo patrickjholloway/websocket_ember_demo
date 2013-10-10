@@ -1,0 +1,10 @@
+.row
+  .columns.large-12.transmogrifier
+    label Raw
+    Em.TextArea valueBinding=content.source
+.row.spaced-vertical-20
+  .columns.large-12.transmogrified
+    label Compiled
+    Em.TextArea valueBinding=processedContent
+    if isTypeCoffee
+      button.button role="button" disabled=isNotValid | Run

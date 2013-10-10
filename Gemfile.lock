@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/rails-api/active_model_serializers.git
+  revision: 919bb3840107e8176a65d90c0af8ec1e02cef683
+  specs:
+    active_model_serializers (0.8.1)
+      activemodel (>= 3.2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -11,8 +18,6 @@ GEM
       erubis (~> 2.7.0)
       rack (~> 1.5.2)
       rack-test (~> 0.6.2)
-    active_model_serializers (0.8.1)
-      activemodel (>= 3.0)
     activemodel (4.0.0)
       activesupport (= 4.0.0)
       builder (~> 3.1.0)
@@ -159,6 +164,7 @@ PLATFORMS
 
 DEPENDENCIES
   RedCloth
+  active_model_serializers!
   better_errors
   binding_of_caller
   coffee-rails

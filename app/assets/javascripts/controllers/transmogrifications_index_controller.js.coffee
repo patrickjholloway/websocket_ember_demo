@@ -1,0 +1,1 @@
+App.TransmogrificationIndexController = Ember.ArrayController.extend {}

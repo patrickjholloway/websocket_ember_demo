@@ -6,6 +6,7 @@
 #= require ember-data
 #= require foundation
 #= require showdown
+#= require emblem
 #= require_self
 #= require template
 

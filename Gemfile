@@ -16,6 +16,7 @@ group :production, :development do
   gem 'pg'
 end
 
+gem 'active_model_serializers', :github => 'rails-api/active_model_serializers'
 gem 'puma'
 gem 'jbuilder'
 gem "haml"

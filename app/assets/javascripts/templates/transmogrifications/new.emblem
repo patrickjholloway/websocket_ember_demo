@@ -1,0 +1,28 @@
+.row
+  .columns.large-12
+    h2 Make a new transmogrifier
+    hr
+.row
+  .columns.large-6
+    label for=view.transmogrifierNameView.elementId Name
+    Ember.TextField viewName=transmogrifierNameView valueBinding="content.name"
+    br
+    label for=view.transmogrifierTypeView.elementId Type
+    Ember.Select viewName=transmogrifierTypeView contentBinding="availableTypes" prompt="Choose a type" valueBinding="content.sourceType"
+    .row: .columns.large-12.spaced-vertical-20
+      button.button.right disabled=hasNoType role="button" click="saveTransmogrifier" create
+  .columns.large-6
+    dl
+      dd Name
+      dt
+        if hasType
+          =content.name
+        else
+          small None
+      hr
+      dd Type
+      dt
+        if hasType
+          =content.sourceType
+        else
+          small None

@@ -16,10 +16,11 @@ ActiveRecord::Schema.define(version: 20131008012919) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "coffeescripts", force: true do |t|
+  create_table "transmogrifications", force: true do |t|
     t.text     "source"
     t.text     "compiled"
     t.string   "name"
+    t.string   "source_type"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
