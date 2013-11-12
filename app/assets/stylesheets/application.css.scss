@@ -48,3 +48,208 @@
 .spaced-vertical-10 {
   margin-top:10px !important;
 }
+
+.close-x {
+  cursor: pointer;
+  opacity:.5;
+  padding:2px;
+  padding-top:0px;
+  padding-left:4px;
+  padding-right:4px;
+  padding-bottom:3px;
+  background-color:#eee;
+  position:absolute;
+  top:7px;
+  right: 5px;
+  margin-top:0px;
+  margin-left:0px;
+  margin-right:0px;
+  border:solid 1px #ccc;
+  cursor:pointer;
+  &:hover {
+    opacity:1;
+    background-color:#ccc;
+  }
+}
+
+// TODO break this stuff out into individual stylesheets
+
+ul.tabs {
+  float: left;
+  width: 100%;
+  padding: 10px;
+  a {
+    &.active {
+      background:#4DCDFF;
+      padding:12px;
+      margin-top:0px;
+      color: #fff;
+    }
+    margin-top:4px;
+    border-top-right-radius:5px;
+    &:hover {
+      background: #4CC5F5;
+    }
+    color: #5C5C5C;
+    cursor: pointer;
+    padding:10px;
+    background: #D9E1E9;
+    float: left;
+  }
+}
+
+.clearb{
+  clear: both;
+}
+
+.clearr{
+  clear: right;
+}
+
+.clearl{
+  clear: left;
+}
+
+.clearfix {
+  display: inline-block;
+}
+
+.character-preview {
+  height:300px;
+}
+
+.field {
+  min-height:60px;
+  height:60px;
+}
+
+li.click-me {
+  padding: 12px;
+  width:220px;
+  cursor: pointer;
+  &:hover {
+    background: #f7f7f7;
+  }
+}
+
+.rows-5 {
+  height:100px;
+}
+
+.navbox {
+  ul li{
+    cursor:pointer;
+      
+    margin-top:-9px;
+    list-style: none;
+    a {
+      &:hover {
+        background-color: #a6cafe;
+      }
+      float:left;
+      background-color:#eee;
+      //border-radius:3px;
+      padding:5px;
+      text-decoration: none;
+      clear:both;
+      width:150px;
+      margin-top:1px;
+      padding-left:13px;
+    }
+  }
+  
+  .navbox-inner {
+    padding:10px;
+  }
+}
+
+button.join {
+  margin:20px;
+  @media only screen and (min-width: 768px) {
+    margin-left:375px;
+  }
+}
+
+.profile{
+  img.th {
+    width:200px;
+  }
+}
+
+.navigator {
+  li a{
+    font-size:1.5em;
+  }
+}
+
+li{
+  list-style:none;
+}
+
+.clickable{
+  cursor: pointer;
+}
+
+#joinModal, #signUpModal {
+  .submit{
+    margin-top:10px;
+  };
+  header {
+    margin:0px;
+    padding:0px;
+    position:relative;
+    a.close-modal {
+      font-size:1.3em;
+      position:absolute;
+      top:-20px;
+      right:-10px;
+      padding:5px;
+      padding-top:0px;
+      padding-bottom:3px;
+      margin:0px;
+      cursor:pointer;
+      &:hover {
+        background:#eee;
+        border:#ccc;
+      };
+    }
+  }
+}
+
+.messages p {
+  padding:20px;
+  padding-top:0px;
+}
+
+.backstory {
+  min-height:500px;
+  padding: 14px;
+  border: solid 1px #ddd;
+  textarea {
+    min-height:480px;
+  }
+}
+
+.chatbox {
+  .input-field {
+    margin-top:15px;
+  }
+  .messages {
+    background: #fff;
+    border: solid 1px #eee;
+    min-height: 450px;
+    max-height: 450px;
+    overflow-y:auto;
+    hr {
+      margin: 0 !important;
+    }
+    .message {
+      padding:10px;
+      line-height:1.5em;
+    }
+  }
+}
+
+.top-bar {
+  margin-bottom:0px;
+}

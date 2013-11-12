@@ -1,0 +1,2 @@
+module EventStreamsHelper
+end

@@ -1,0 +1,14 @@
+h1 Chat
+.chatbox
+  .messages
+    each message in messages
+      .message
+        .header
+          b #{message.username}
+        .body
+          = message.body
+      hr
+  .input-field
+    Ember.TextField valueBinding="newMessageBody"
+    .actions
+      button click="createNewMessage" Submit

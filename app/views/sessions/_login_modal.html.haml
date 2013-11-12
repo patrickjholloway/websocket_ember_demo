@@ -1,0 +1,25 @@
+#signUpModal.reveal-modal.medium
+  %header
+    %h3 Log in
+    %a.close-modal×
+  = form_tag :sessions do
+    .row
+      .columns
+        = label_tag :login
+        = text_field_tag :login
+    .row
+      .field
+        .columns
+          = label_tag :password
+          = password_field_tag :password
+    .row
+      .field
+        .columns
+          = submit_tag "Log in", class: 'button small'
+:coffeescript
+  $ ->
+    $modal = $('#signUpModal')
+    $('a.login').on 'click', ->
+      $modal.foundation('reveal', 'open');
+    $('.close-modal').on 'click', ->
+      $modal.foundation('reveal', 'close');

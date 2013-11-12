@@ -1,0 +1,31 @@
+#joinModal.reveal-modal.medium
+  %header
+    %h3 Sign up for an account
+    %a.close-modal×
+  = form_for @user, url: signup_path do |user|
+    .row
+      .columns
+        = user.label :username, "Username"
+        = user.text_field :username
+    .row
+      .columns
+        = user.label :email
+        = user.text_field :email
+    .row
+      .columns
+        = user.label :password
+        = user.password_field :password
+    .row
+      .columns
+        = user.label :password_confirmation
+        = user.password_field :password_confirmation
+    .row
+      .columns
+        = user.submit "Join now", class: 'button submit'
+:coffeescript
+  $ ->
+    $modal = $('#joinModal')
+    $('.join').on 'click', ->
+      $modal.foundation('reveal', 'open');
+    $('.close-modal').on 'click', ->
+      $modal.foundation('reveal', 'close');

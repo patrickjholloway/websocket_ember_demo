@@ -1,0 +1,15 @@
+#= require handlebars
+#= require ember
+#= require ember-data
+#= require showdown
+#= require emblem
+#= require_self
+#= require template
+
+@App = Ember.Application.create({
+  LOG_TRANSITIONS: true,
+  LOG_BINDINGS: true,
+});
+
+#= require_tree .
+@App.rootElement = '.ember'

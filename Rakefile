@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Templates::Application.load_tasks
+WebsocketEmberDemo::Application.load_tasks

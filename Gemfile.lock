@@ -1,8 +1,8 @@
 GIT
   remote: git://github.com/rails-api/active_model_serializers.git
-  revision: 919bb3840107e8176a65d90c0af8ec1e02cef683
+  revision: 127413ffdef207629cec537de1a37b60ade0c7e3
   specs:
-    active_model_serializers (0.8.1)
+    active_model_serializers (0.9.0.pre)
       activemodel (>= 3.2)
 
 GEM
@@ -33,7 +33,7 @@ GEM
       multi_json (~> 1.3)
       thread_safe (~> 0.1)
       tzinfo (~> 0.3.37)
-    arel (4.0.0)
+    arel (4.0.1)
     atomic (1.1.14)
     barber (0.4.2)
       ember-source
@@ -42,6 +42,7 @@ GEM
     barber-emblem (0.1.1)
       barber (>= 0.4.1)
       emblem-source
+    bcrypt-ruby (3.0.1)
     better_errors (1.0.1)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
@@ -49,9 +50,9 @@ GEM
       debug_inspector (>= 0.0.1)
     builder (3.1.4)
     coderay (1.0.9)
-    coffee-rails (4.0.0)
+    coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
-      railties (>= 4.0.0.beta, < 5.0)
+      railties (>= 4.0.0, < 5.0)
     coffee-script (2.2.0)
       coffee-script-source
       execjs
@@ -59,25 +60,26 @@ GEM
     debug_inspector (0.0.2)
     ember-data-source (0.14)
       ember-source
-    ember-rails (0.13.0)
+    ember-rails (0.14.0)
       active_model_serializers
       barber (>= 0.4.1)
       ember-data-source
       ember-source
       execjs (>= 1.2)
       handlebars-source
+      jquery-rails (>= 1.0.17)
       railties (>= 3.1)
     ember-source (1.0.0)
       handlebars-source (= 1.0.12)
-    emblem-rails (0.1.1)
+    emblem-rails (0.2.0)
       barber-emblem (~> 0.1.1)
-      ember-rails (>= 0.11.1)
-    emblem-source (0.3.2)
+      ember-rails (>= 0.14.0)
+    emblem-source (0.3.4)
     erubis (2.7.0)
     execjs (2.0.2)
-    foreigner (1.5.0)
+    foreigner (1.6.0)
       activerecord (>= 3.0.0)
-    haml (4.0.3)
+    haml (4.0.4)
       tilt
     haml-rails (0.4)
       actionpack (>= 3.1, < 4.1)
@@ -87,19 +89,20 @@ GEM
     handlebars-source (1.0.12)
     hike (1.2.3)
     i18n (0.6.5)
-    jbuilder (1.5.1)
+    jbuilder (1.5.2)
       activesupport (>= 3.0.0)
       multi_json (>= 1.2.0)
     jquery-rails (3.0.4)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
+    json (1.8.1)
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     method_source (0.8.2)
     mime-types (1.25)
     minitest (4.7.5)
-    multi_json (1.8.1)
+    multi_json (1.8.2)
     pg (0.17.0)
     polyglot (0.3.3)
     pry (0.9.12.2)
@@ -130,8 +133,8 @@ GEM
       thor (>= 0.18.1, < 2.0)
     rake (10.1.0)
     sass (3.2.12)
-    sass-rails (4.0.0)
-      railties (>= 4.0.0.beta, < 5.0)
+    sass-rails (4.0.1)
+      railties (>= 4.0.0, < 5.0)
       sass (>= 3.1.10)
       sprockets-rails (~> 2.0.0)
     slop (3.4.6)
@@ -140,7 +143,7 @@ GEM
       multi_json (~> 1.0)
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
-    sprockets-rails (2.0.0)
+    sprockets-rails (2.0.1)
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (~> 2.8)
@@ -151,11 +154,15 @@ GEM
     treetop (1.4.15)
       polyglot
       polyglot (>= 0.3.1)
-    tzinfo (0.3.37)
-    uglifier (2.2.1)
+    tubesock (0.2.2)
+      rack (>= 1.5.0)
+      websocket (>= 1.1.0)
+    tzinfo (0.3.38)
+    uglifier (2.3.0)
       execjs (>= 0.3.0)
-      multi_json (~> 1.0, >= 1.0.2)
+      json (>= 1.8.0)
     underscore-rails (1.5.2)
+    websocket (1.1.1)
     zurb-foundation (4.0.9)
       sass (>= 3.2.0)
 
@@ -165,6 +172,7 @@ PLATFORMS
 DEPENDENCIES
   RedCloth
   active_model_serializers!
+  bcrypt-ruby (~> 3.0.0)
   better_errors
   binding_of_caller
   coffee-rails
@@ -183,6 +191,7 @@ DEPENDENCIES
   rails (= 4.0.0)
   rake
   sass-rails
+  tubesock
   uglifier (>= 1.0.3)
   underscore-rails
   zurb-foundation (~> 4.0.5)

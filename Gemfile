@@ -16,8 +16,10 @@ group :production, :development do
   gem 'pg'
 end
 
+gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'active_model_serializers', :github => 'rails-api/active_model_serializers'
 gem 'puma'
+gem 'tubesock'
 gem 'jbuilder'
 gem "haml"
 gem 'RedCloth'

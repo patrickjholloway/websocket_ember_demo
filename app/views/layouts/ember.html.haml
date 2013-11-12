@@ -1,0 +1,19 @@
+!!!
+%head
+  %meta{:charset => "UTF-8"}
+  %meta{:name => "google", :value => "notranslate"}
+  %meta{:content => "en", "http-equiv" => "Content-Language"}
+  = stylesheet_link_tag    "application", :media => "all"
+  = javascript_include_tag "application"
+  = javascript_include_tag "ember_manifest"
+  = yield(:head)
+  = csrf_meta_tags
+%body.large-12.row
+  = render "navbar"
+  %header.large-12.row
+    = yield(:header)
+  %section.ember
+    = yield
+  %footer.large-12.row
+    = yield(:footer)
+  = yield(:modals)

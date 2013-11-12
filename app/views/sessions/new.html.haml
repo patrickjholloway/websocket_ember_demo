@@ -1,0 +1,12 @@
+= content_for :modals do
+  = render 'login_modal'
+  = render 'join_modal'
+.row
+  .large-12.columns
+    .div
+      %h1 WebSockets & Ember Demo
+      %h4.subheader
+    %button.join{type: 'button'}
+      Join Now!
+    %p Already a member?
+    %a.login{href:'#'} Sign in
