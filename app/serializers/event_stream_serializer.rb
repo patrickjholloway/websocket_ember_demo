@@ -1,3 +1,6 @@
 class EventStreamSerializer < ActiveModel::Serializer
-  attributes :id
+  embed :ids
+  
+  attributes :id, :name
+  has_many :chat_messages
 end

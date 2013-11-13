@@ -4,9 +4,9 @@ class ChatMessagesController < ApplicationController
   
   def index
     if params[:ids].present?
-      respond_with ChatMessage.find_by_ids(params[:ids])
+      render json: @chat_messages = ChatMessage.find_by_ids(params[:ids])
     else
-      respond_with ChatMessage.all
+      render json: @chat_messages = ChatMessage.all
     end
   end
   
@@ -19,6 +19,6 @@ class ChatMessagesController < ApplicationController
   end
   
   def show
-    respond_with ChatMessage.find(params[:id])
+    respond_with ChatMessage.find(params[:id]).ember_json.target!
   end
 end

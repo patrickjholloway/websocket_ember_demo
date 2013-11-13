@@ -4,12 +4,11 @@
 #= require showdown
 #= require emblem
 #= require_self
-#= require template
+#= require websocket_demo
 
 @App = Ember.Application.create({
   LOG_TRANSITIONS: true,
   LOG_BINDINGS: true,
 });
 
-#= require_tree .
 @App.rootElement = '.ember'

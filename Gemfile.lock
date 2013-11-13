@@ -58,7 +58,7 @@ GEM
       execjs
     coffee-script-source (1.6.3)
     debug_inspector (0.0.2)
-    ember-data-source (0.14)
+    ember-data-source (1.0.0.beta.2)
       ember-source
     ember-rails (0.14.0)
       active_model_serializers
@@ -176,6 +176,7 @@ DEPENDENCIES
   better_errors
   binding_of_caller
   coffee-rails
+  ember-data-source (~> 1.0.0.beta.2)
   ember-rails
   ember-source (= 1.0.0)
   emblem-rails

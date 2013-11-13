@@ -1,5 +1,6 @@
 WebsocketEmberDemo::Application.routes.draw do
   resources :event_streams
+  resources :chat_messages
   resources :sessions
   resources :transmogrifications
   resources :users do

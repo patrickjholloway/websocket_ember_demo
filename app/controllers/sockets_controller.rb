@@ -13,11 +13,12 @@ class SocketsController < ApplicationController
 		      @listener = Thread.new do
 		        Thread.current.abort_on_exception = true
 		        es.on_new_message do |message|
-		          tubesock.send_data JSON.parse(message)
+		          tubesock.send_data message
 		        end
 		      end
 		    elsif @listening && event_stream_data['chat_message']
 		      chat_message = ChatMessage.new(event_stream_data['chat_message'])
+          chat_message.user_id = current_user.id
 		      chat_message.meta = process_meta_data(chat_message) if chat_message.meta.present?
 		      chat_message.save
 		    end
