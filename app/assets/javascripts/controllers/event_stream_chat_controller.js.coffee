@@ -4,6 +4,9 @@ App.EventStreamChatController = Ember.ObjectController.extend
   eventStreamBinding: 'content'
   messagesBinding: 'content.chatMessages'
 
+  scrollToBottom: ->
+    $('.messages').scrollTop($('.messages')[0].scrollHeight)
+
   init: ->
     url = "ws://" + window.location.host + "/chat"
     @set 'chatSocket', new WebSocket url
@@ -18,6 +21,7 @@ App.EventStreamChatController = Ember.ObjectController.extend
       Ember.run.next =>
         @store.find('chatMessage', payload.chatMessages[0].id).then (msg) =>
           @get('chatMessages').pushObject msg
+          @scrollToBottom()
 
   actions:
 
@@ -29,5 +33,3 @@ App.EventStreamChatController = Ember.ObjectController.extend
       @chatSocket.send JSON.stringify message
       @.set 'newMessageBody', ""
 
-    scrollToBottom: ->
-      $('.messages').scrollTop($('.messages')[0].scrollHeight)

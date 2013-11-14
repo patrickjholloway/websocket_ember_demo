@@ -1,7 +1,6 @@
-h1 #{this.content.chatMessages.length}
+h1 #{this.content.name}
 .chatbox
   .messages
-    debugger
     each message in messages
       .message
         .header
