@@ -2,6 +2,7 @@ class SocketsController < ApplicationController
 	skip_before_filter :require_login
   
   include Tubesock::Hijack
+
 	def chat
 		@listening = false
 		hijack do |tubesock|
@@ -33,15 +34,17 @@ class SocketsController < ApplicationController
 	private
   
   def process_meta_data(message)
-    meta_data = JSON.parse(message.meta)
+    meta_data = message.meta
     action_key = META_CONTROLLER_KEYS.map {|key| meta_data.has_key?(key) ? key : nil }.compact[0]
-    result = case action_key
+    case action_key
     when 'diceRoll'
       Dice.humanized_roll(meta_data[action_key])
+    when 'ssh'
+      output = %x[#{message.body} | tail -20]
+      output.split("\n").map{|line| '<p>'+line+'</p>'}.join('') if output
     end
-    result.to_json
   end
   
-  META_CONTROLLER_KEYS = ['diceRoll']
+  META_CONTROLLER_KEYS = ['diceRoll', 'ssh']
 
 end

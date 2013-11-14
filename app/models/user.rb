@@ -18,4 +18,11 @@ class User < ActiveRecord::Base
                               :message => "Password must be at least 6 characters long and contain 1 digit, 1 letter, and is case sensitive." 
                             },
                             on: :create
+  def ember_json
+    Jbuilder.encode do |json|
+      json.user do
+        json.(self, :id, :username, :email)
+      end
+    end
+  end
 end

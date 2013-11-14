@@ -8,7 +8,7 @@ class EventStream < ActiveRecord::Base
         yield chat_message
       end
     end
-  ensure
+    ensure
     db_connection.execute "UNLISTEN #{channel}"
   end
 

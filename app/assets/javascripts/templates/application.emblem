@@ -4,11 +4,7 @@ h1 Sock it up
     ul
       li
         linkTo "event_stream.chat" | Chat
-      li 
-        linkTo "event_stream.shell" | Shell
       li
         linkTo "event_stream.ssh" | SSH
-      li
-        linkTo "event_stream.hangman" | Hangman
   .columns.large-10
     outlet

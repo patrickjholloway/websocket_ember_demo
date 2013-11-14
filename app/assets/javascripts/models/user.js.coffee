@@ -1,3 +1,3 @@
-# for more details see: http://emberjs.com/guides/models/defining-models/
-
-App.User = DS.Model.extend()
+App.User = DS.Model.extend
+  username: DS.attr('string')
+  email: DS.attr('string')

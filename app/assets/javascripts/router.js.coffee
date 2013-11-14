@@ -4,6 +4,4 @@ App.Router.map (match) ->
 	@resource 'dashboard', {path: '/'}, ->
 	  @resource 'event_stream', {path: 'event_stream' }, ->
 	    @route 'chat',
-      @route 'shell',
-      @route 'ssh',
-      @route 'hangman'
+      @route 'ssh'

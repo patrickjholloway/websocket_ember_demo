@@ -253,3 +253,13 @@ li{
 .top-bar {
   margin-bottom:0px;
 }
+
+.body.shell {
+  background: black;
+  color: #d8f683;
+  p {
+    padding:0px;
+    margin:0px;
+    margin-left: 50px;
+  }
+}

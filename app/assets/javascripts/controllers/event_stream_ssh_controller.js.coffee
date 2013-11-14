@@ -1,4 +1,4 @@
-App.EventStreamChatController = Ember.ObjectController.extend
+App.EventStreamSshController = Ember.ObjectController.extend
 
   newMessageBody: ""
   eventStreamBinding: 'content'
@@ -14,15 +14,10 @@ App.EventStreamChatController = Ember.ObjectController.extend
     @chatSocket.onopen = ->
       @send JSON.stringify
         event_stream: 
-          id: 1
+          id: 2
 
     @chatSocket.onmessage = (event) =>
       payload = JSON.parse(event.data)
-      if metaWorldPeace = JSON.parse(payload.chatMessages[0].meta)
-        switch Ember.keys(metaWorldPeace)[0]
-          when 'shell_output'
-            metaWorldPeace.shell_output.forEach (output) ->
-              console.log output
       @store.pushPayload('chat_message', payload)
       Ember.run.next =>
         @store.find('chatMessage', payload.chatMessages[0].id).then (msg) =>
@@ -35,7 +30,7 @@ App.EventStreamChatController = Ember.ObjectController.extend
     createNewMessage: ->
       message =
         chat_message:
-          event_stream_id: 1
+          event_stream_id: 2
           body: @get 'newMessageBody'
           meta: {ssh: "ls"}
       @chatSocket.send JSON.stringify message

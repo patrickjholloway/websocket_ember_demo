@@ -1,0 +1,17 @@
+h1 #{this.content.name}
+.chatbox
+  .messages.shell
+    each message in messages
+      .message
+        .header
+          b
+            em #{message.username}
+            | > #{message.body}
+        .body.shell
+          == message.meta!
+
+      hr
+  .input-field
+    Ember.TextField valueBinding="newMessageBody"
+    .actions
+      button click="createNewMessage" Submit
