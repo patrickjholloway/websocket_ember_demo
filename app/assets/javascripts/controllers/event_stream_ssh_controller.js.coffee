@@ -4,7 +4,6 @@ App.EventStreamSshController = Ember.ObjectController.extend
   eventStreamBinding: 'content'
   messagesBinding: 'content.chatMessages'
 
-
   scrollToBottom: ->
     $('.messages').scrollTop $('.messages')[0].scrollHeight
 
@@ -22,8 +21,6 @@ App.EventStreamSshController = Ember.ObjectController.extend
       Ember.run.next =>
         @store.find('chatMessage', payload.chatMessages[0].id).then (msg) =>
           @get('chatMessages').pushObject msg
-          Ember.run.next =>
-            @scrollToBottom()
 
   actions:
 

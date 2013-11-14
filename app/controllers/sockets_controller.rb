@@ -31,6 +31,15 @@ class SocketsController < ApplicationController
 		end
 	end
 
+    def demo
+    @listening = false
+    hijack do |tubesock|
+      tubesock.onmessage do |data|
+        tubesock.send_data "foooooooooo"
+      end
+    end
+  end
+
 	private
   
   def process_meta_data(message)

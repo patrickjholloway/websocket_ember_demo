@@ -18,11 +18,6 @@ App.EventStreamChatController = Ember.ObjectController.extend
 
     @chatSocket.onmessage = (event) =>
       payload = JSON.parse(event.data)
-      if metaWorldPeace = JSON.parse(payload.chatMessages[0].meta)
-        switch Ember.keys(metaWorldPeace)[0]
-          when 'shell_output'
-            metaWorldPeace.shell_output.forEach (output) ->
-              console.log output
       @store.pushPayload('chat_message', payload)
       Ember.run.next =>
         @store.find('chatMessage', payload.chatMessages[0].id).then (msg) =>

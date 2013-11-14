@@ -10,6 +10,7 @@ WebsocketEmberDemo::Application.routes.draw do
   match 'eventStreams/:id' => "event_streams#show", via: :get
   match 'chatMessages/:id' => "chat_messages#show", via: :get
   match 'chat' => 'sockets#chat', via: 'get'
+  match 'demo' => 'sockets#demo', via: 'get'
   match 'signup' => 'users#create', as: 'signup', :via => :post
   match 'login' => 'sessions#new', as: 'login', :via => :get
   match 'logout' => 'sessions#destroy', as: 'logout', :via => :delete
