@@ -31,7 +31,7 @@ gem 'underscore-rails'
 gem 'jquery-rails'
 gem 'ember-rails'
 gem 'ember-source', '1.0.0'
-gem "ember-data-source", "~> 1.0.0.beta.2"
+gem "ember-data-source", "~> 1.0.0.beta.3"
 gem 'emblem-rails'
 gem 'foreigner'
 gem 'zurb-foundation', '~> 4.0.5'

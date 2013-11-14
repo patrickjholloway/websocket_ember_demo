@@ -7,6 +7,8 @@ WebsocketEmberDemo::Application.routes.draw do
     member { get :current; }
   end
   
+  match 'eventStreams/:id' => "event_streams#show", via: :get
+  match 'chatMessages/:id' => "chat_messages#show", via: :get
   match 'chat' => 'sockets#chat', via: 'get'
   match 'signup' => 'users#create', as: 'signup', :via => :post
   match 'login' => 'sessions#new', as: 'login', :via => :get

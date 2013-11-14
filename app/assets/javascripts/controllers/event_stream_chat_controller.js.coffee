@@ -13,9 +13,11 @@ App.EventStreamChatController = Ember.ObjectController.extend
           id: 1
 
     @chatSocket.onmessage = (event) =>
-      debugger
-      a = @store.push('chat_message', event.data)
-      @get('eventStream.chatMessages').pushObject(a)
+      payload = JSON.parse(event.data)
+      @store.pushPayload('chat_message', payload)
+      Ember.run.next =>
+        @store.find('chatMessage', payload.chatMessages[0].id).then (obj) =>
+          @get('chatMessages').pushObject obj
 
   actions:
 

@@ -19,6 +19,7 @@ class ChatMessagesController < ApplicationController
   end
   
   def show
-    respond_with ChatMessage.find(params[:id]).ember_json.target!
+    @chat_message = ChatMessage.find(params[:id])
+    render action: 'show'
   end
 end

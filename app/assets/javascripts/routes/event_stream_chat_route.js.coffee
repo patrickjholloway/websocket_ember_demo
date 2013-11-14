@@ -1,7 +1,7 @@
 App.EventStreamChatRoute = Ember.Route.extend
 
   model: ->
-    @get('store').find 'event_stream', 1
+    @get('store').find 'eventStream', 1
 
   setupController: (controller, model) ->
     controller.set 'model', model
