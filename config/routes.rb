@@ -2,11 +2,12 @@ WebsocketEmberDemo::Application.routes.draw do
   resources :event_streams
   resources :chat_messages
   resources :sessions
-  resources :transmogrifications
   resources :users do
     member { get :current; }
   end
   
+  # sorry these routes are so garbage, this was a hack job :()
+
   match 'eventStreams/:id' => "event_streams#show", via: :get
   match 'chatMessages/:id' => "chat_messages#show", via: :get
   match 'chat' => 'sockets#chat', via: 'get'

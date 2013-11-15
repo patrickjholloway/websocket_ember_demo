@@ -1,7 +1,0 @@
-.panel
-  .row
-    .columns.large-6
-      shout "Patricks Very Own Transmogifier"
-    .columns.large-4: img src="assets/trs.png"
-.trans-content
-  outlet
