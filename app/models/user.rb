@@ -12,11 +12,6 @@ class User < ActiveRecord::Base
                             :uniqueness => true
 
   validates :password,      :presence => true,
-                            :length => {:within => 6..30},
-                            :format => {
-                              :with => /\A(?=.*[a-zA-Z])(?=.*[0-9]).{6,}\z/,
-                              :message => "Password must be at least 6 characters long and contain 1 digit, 1 letter, and is case sensitive." 
-                            },
                             on: :create
   def ember_json
     Jbuilder.encode do |json|
